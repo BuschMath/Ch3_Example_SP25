@@ -3,11 +3,11 @@
 
 #include "ItemType.h"
 
-class UnsortedTypeA
+class UnsortedListA
 {
 public:
-	UnsortedTypeA();
-	~UnsortedTypeA();
+	UnsortedListA();
+	~UnsortedListA();
 	void MakeEmpty();
 	bool IsFull() const;
 	bool IsEmpty() const;

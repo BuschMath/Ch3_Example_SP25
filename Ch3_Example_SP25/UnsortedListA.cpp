@@ -1,22 +1,23 @@
 #include "UnsortedListA.h"
+#include <memory>
 
-UnsortedTypeA::UnsortedTypeA()
+UnsortedListA::UnsortedListA()
 {
 	length = 0;
 	currentPos = -1;
 }
 
-UnsortedTypeA::~UnsortedTypeA()
+UnsortedListA::~UnsortedListA()
 {
 	MakeEmpty();
 }
 
-void UnsortedTypeA::MakeEmpty()
+void UnsortedListA::MakeEmpty()
 {
 	length = 0;
 }
 
-bool UnsortedTypeA::IsFull() const
+bool UnsortedListA::IsFull() const
 {
 	if(length == MAX_ITEMS)
 		return true;
@@ -24,7 +25,7 @@ bool UnsortedTypeA::IsFull() const
 		return false;
 }
 
-bool UnsortedTypeA::IsEmpty() const
+bool UnsortedListA::IsEmpty() const
 {
 	if(length == 0)
 		return true;
@@ -32,12 +33,12 @@ bool UnsortedTypeA::IsEmpty() const
 		return false;
 }
 
-int UnsortedTypeA::GetLength() const
+int UnsortedListA::GetLength() const
 {
 	return length;
 }
 
-ItemType UnsortedTypeA::GetItem(ItemType item, bool& found)
+ItemType UnsortedListA::GetItem(ItemType item, bool& found)
 {
 	if(IsEmpty())
 	{
@@ -56,9 +57,10 @@ ItemType UnsortedTypeA::GetItem(ItemType item, bool& found)
 			}
 		}
 	}
+	return item;
 }
 
-bool UnsortedTypeA::PutItem(ItemType item)
+bool UnsortedListA::PutItem(ItemType item)
 {
 	if(IsFull())
 	{
@@ -75,7 +77,7 @@ bool UnsortedTypeA::PutItem(ItemType item)
 	return false;
 }
 
-bool UnsortedTypeA::DeleteItem(ItemType item)
+bool UnsortedListA::DeleteItem(ItemType item)
 {
 	if(IsEmpty())
 	{
@@ -97,12 +99,12 @@ bool UnsortedTypeA::DeleteItem(ItemType item)
 	return false;
 }
 
-void UnsortedTypeA::ResetList()
+void UnsortedListA::ResetList()
 {
 	currentPos = -1;
 }
 
-ItemType UnsortedTypeA::GetNextItem()
+ItemType UnsortedListA::GetNextItem()
 {
 	currentPos++;
 	currentPos = currentPos % length;

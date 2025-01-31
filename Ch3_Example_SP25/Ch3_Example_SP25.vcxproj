@@ -128,12 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ItemType.h" />
-    <ClInclude Include="Scalar.h" />
     <ClInclude Include="UnsortedListA.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ItemType.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Scalar.cpp" />
     <ClCompile Include="UnsortedListA.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

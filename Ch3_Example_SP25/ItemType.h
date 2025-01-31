@@ -3,28 +3,22 @@
 
 enum RelationType { LESS, GREATER, EQUAL };
 
+const int MAX_ITEMS = 100;
+
 class ItemType
 {
 public:
 	ItemType();
 	~ItemType();
 
-	void SetMaxItems(int maxItems) { MAX_ITEMS = maxItems; }
-	int GetMaxItems() const { return MAX_ITEMS; }
+	RelationType ComparedTo(const ItemType& otherItem) const;
 
-	virtual RelationType ComparedTo(const ItemType& otherItem) const = 0;
+	void setValue(int value_) { value = value_; };
+	int getValue() const { return value; };
 
 private:
-	int MAX_ITEMS = 5;
+	int value;
 };
-
-ItemType::ItemType()
-{
-}
-
-ItemType::~ItemType()
-{
-}
 
 #endif // !ITEMTYPE_H
 
