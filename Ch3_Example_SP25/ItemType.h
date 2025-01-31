@@ -12,7 +12,7 @@ public:
 	void SetMaxItems(int maxItems) { MAX_ITEMS = maxItems; }
 	int GetMaxItems() const { return MAX_ITEMS; }
 
-	virtual RelationType ComparedTo(ItemType otherItem) const;
+	virtual RelationType ComparedTo(const ItemType& otherItem) const = 0;
 
 private:
 	int MAX_ITEMS = 5;
@@ -24,14 +24,6 @@ ItemType::ItemType()
 
 ItemType::~ItemType()
 {
-}
-
-RelationType ItemType::ComparedTo(ItemType otherItem) const
-{
-	if (this == &otherItem)
-		return EQUAL;
-	else
-		return LESS;
 }
 
 #endif // !ITEMTYPE_H

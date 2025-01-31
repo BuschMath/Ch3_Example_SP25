@@ -10,14 +10,13 @@ class Scalar : public ItemType
 public:
 	Scalar();
 	~Scalar();
-	Scalar(Scalar &otherScalar);
 
-	RelationType ComparedTo(ItemType otherItem) const;
+	RelationType ComparedTo(const ItemType& otherItem) const override;
 
 	int value;
 
 private:
-
+	
 };
 
 #endif // !SCALAR_H

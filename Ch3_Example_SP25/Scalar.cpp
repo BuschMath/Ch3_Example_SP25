@@ -10,11 +10,16 @@ Scalar::~Scalar()
 {
 }
 
-RelationType Scalar::ComparedTo(ItemType otherItem) const
+RelationType Scalar::ComparedTo(const ItemType& otherItem) const
 {
-	if(value < otherItem.value)
+	const Scalar* otherScalar = dynamic_cast<const Scalar*>(&otherItem);
+
+	if(otherScalar == nullptr)
+		throw "Invalid type";
+
+	if(value < otherScalar->value)
 		return LESS;
-	else if(value > otherItem.value)
+	else if(value > otherScalar->value)
 		return GREATER;
 	else
 		return EQUAL;
